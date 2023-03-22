@@ -70,7 +70,7 @@ namespace _22_03_2023_WPF_kable_lisp_circle
             #endregion
             // вставыляем данные из texbox2 - диаметры
             kable_d_l += "\n" + textbox2.Text + " ";
-            kable_d_l += " \n )" + "\n" + " (setq lay(nth N_lay'(";
+            kable_d_l += " \n )" + "\n" + " (setq lay(nth N_lay'(\n";
 
             // цикл с именами из texbox1 вставить и добавить кавычки " + name + "
 
