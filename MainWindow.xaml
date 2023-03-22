@@ -29,8 +29,16 @@
             
         </Grid.ColumnDefinitions>
         <Button Name="save_b" Content="собрать файл" Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="3" Click="save_b_Click"/>
-        <TextBox Name="textbox1" Grid.ColumnSpan="3" TextWrapping="Wrap" Text="TextBox" Grid.Column="1" Grid.Row="0" Grid.RowSpan="5" TextChanged="textbox1_TextChanged"/>
-        <TextBox Name="textbox2" Grid.ColumnSpan="3" TextWrapping="Wrap" Text="TextBox" Grid.Column="5" Grid.Row="0" Grid.RowSpan="5" TextChanged="textbox2_TextChanged"/>
+        <TextBox Name="textbox1" Grid.ColumnSpan="3" TextWrapping="Wrap"
+                  VerticalScrollBarVisibility="Auto"
+                 AcceptsReturn="True" Text="TextBox" 
+                 Grid.Column="1" Grid.Row="0" Grid.RowSpan="5"
+                 TextChanged="textbox1_TextChanged"/>
+        <TextBox Name="textbox2" Grid.ColumnSpan="3" TextWrapping="Wrap" 
+                 VerticalScrollBarVisibility="Auto"
+                 AcceptsReturn="True" Text="TextBox" 
+                 Grid.Column="5" Grid.Row="0" Grid.RowSpan="5"
+                 TextChanged="textbox2_TextChanged"/>
 
     </Grid>
 </Window>
