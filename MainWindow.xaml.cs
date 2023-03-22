@@ -34,6 +34,7 @@ namespace _22_03_2023_WPF_kable_lisp_circle
         public string kable_d_l;
         public void concat()
         {
+            #region
             kable_d_l = ("; Начало оптимизации прорисовки кабелей по трубам\r\n\t\t\t" +
                  "; 1) Добавление слоев 19.03.2019\r\n" +
                  "(DEFUN c:Tald_kable_diam (/ x1 y1 y2 y3 circl circl2 circl3 name3 last1 dpat S1 S2 " +
@@ -66,6 +67,7 @@ namespace _22_03_2023_WPF_kable_lisp_circle
                  "_______________________________________________________________________________\r\n " +
                  " (foreach circl3 \r\n  " +
                  "  '(; Список диаметров берем из кабельного журнала - впоследствии база данных ");
+            #endregion
             // вставыляем данные из texbox2 - диаметры
             kable_d_l += "\n" + textbox2.Text + " ";
             kable_d_l += " \n )" + "\n" + " (setq lay(nth N_lay'(";
@@ -74,7 +76,12 @@ namespace _22_03_2023_WPF_kable_lisp_circle
 
             kable_d_l += "\"dfd\"\n";
             // пробуем через спеисок перебрать texbox1
+            foreach (string s in list_name)
+            {
 
+                kable_d_l += "\"" + s + "\"" + "\n";
+            }
+            #region
             kable_d_l += ")\n";
             kable_d_l += ")\n";
     kable_d_l += ")\n";
@@ -158,13 +165,13 @@ namespace _22_03_2023_WPF_kable_lisp_circle
   kable_d_l += "(command \"_OSMODE\" \"5887\")\n";
   kable_d_l += "; включение режима 2D привязка\n";
 kable_d_l += ")\n";
-           
 
+            #endregion
         }
 
         private void textbox1_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            
         }
 
         private void textbox2_TextChanged(object sender, TextChangedEventArgs e)
@@ -175,6 +182,14 @@ kable_d_l += ")\n";
 
         private void save_b_Click(object sender, RoutedEventArgs e)
         {
+            string[] separator = { "\n", "\r" };
+            // добавляем данные в список
+            string[] texbox1_str_spl = textbox1.Text.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+            foreach (var item in texbox1_str_spl)
+            {
+                list_name.Add(texbox1_str_spl[0]);
+            }
+            
             concat();
 
             SaveFileDialog dialog = new SaveFileDialog();
