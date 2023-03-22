@@ -77,7 +77,7 @@ namespace _22_03_2023_WPF_kable_lisp_circle {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/22-03-2023_WPF_kable_lisp_circle;component/mainwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/22-03-2023_WPF_kable_lisp_circle;V1.0.0.0;component/mainwindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\MainWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
