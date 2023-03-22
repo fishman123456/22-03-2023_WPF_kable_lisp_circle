@@ -74,7 +74,7 @@ namespace _22_03_2023_WPF_kable_lisp_circle
 
             // цикл с именами из texbox1 вставить и добавить кавычки " + name + "
 
-            kable_d_l += "\"dfd\"\n";
+            //kable_d_l += "\"dfd\"\n";
             // пробуем через спеисок перебрать texbox1
             foreach (string s in list_name)
             {
@@ -185,9 +185,12 @@ kable_d_l += ")\n";
             string[] separator = { "\n", "\r" };
             // добавляем данные в список
             string[] texbox1_str_spl = textbox1.Text.Split(separator, StringSplitOptions.RemoveEmptyEntries);
+            int count = 0;
             foreach (var item in texbox1_str_spl)
             {
-                list_name.Add(texbox1_str_spl[0]);
+                
+                list_name.Add(texbox1_str_spl[count]);
+                count++;
             }
             
             concat();
