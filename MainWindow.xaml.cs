@@ -221,6 +221,7 @@ kable_d_l += ")\n";
         {
             textbox1?.Clear();
             textbox2?.Clear();
+            list_name.Clear();
         }
     }
 }
