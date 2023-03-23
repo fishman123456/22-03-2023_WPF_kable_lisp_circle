@@ -216,5 +216,11 @@ kable_d_l += ")\n";
             }
 
         }
+
+        private void clear_Click(object sender, RoutedEventArgs e)
+        {
+            textbox1?.Clear();
+            textbox2?.Clear();
+        }
     }
 }
