@@ -81,6 +81,7 @@ namespace _22_03_2023_WPF_kable_lisp_circle
 
                 kable_d_l += "\"" + s + "\"" + "\n";
             }
+            // добавляем окончание файла lisp
             #region
             kable_d_l += ")\n";
             kable_d_l += ")\n";

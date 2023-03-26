@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_22_03_2023_WPF_kable_lisp_circle"
         mc:Ignorable="d"
-        Title="U-83_F_22-03-2023" Height="250" Width="293" WindowStartupLocation="CenterScreen" ToolTip="ввод диаметра кабеля и его имя. получаем lisp файл для загрузки в autocad">
+        Title="U-83_F_22-03-2023" Height="250" Width="300" WindowStartupLocation="CenterScreen" 
+        ToolTip="ввод диаметра кабеля и его имя. получаем lisp файл для загрузки в autocad" 
+        HorizontalContentAlignment="Center" MinHeight="280" MinWidth="300"   >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50*"/>
@@ -28,7 +30,7 @@
             
         </Grid.ColumnDefinitions>
         <Button Name="save_b" Content="собрать файл" Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="3" 
-                Margin="3" Click="save_b_Click"/>
+                Margin="3" Click="save_b_Click" Width="120" Height="30"/>
         <TextBox Name="textbox1" Grid.ColumnSpan="3" TextWrapping="Wrap"
                   VerticalScrollBarVisibility="Auto"
                  AcceptsReturn="True" Text="-701-1-K2" Margin="3"
