@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_22_03_2023_WPF_kable_lisp_circle"
         mc:Ignorable="d"
-        Title="U-83_F_22-03-2023" Height="350" Width="600" WindowStartupLocation="CenterScreen" ToolTip="ввод диаметра кабеля и его имя. получаем lisp файл для загрузки в autocad">
-    <Border CornerRadius="50,0,50,0" Background="White" BorderBrush="#99ffc0c0" BorderThickness="1">
+        Title="U-83_F_22-03-2023" Height="350" Width="600" WindowStartupLocation="CenterScreen"
+        ToolTip="ввод диаметра кабеля и его имя. получаем lisp файл для загрузки в autocad">
+    <Border CornerRadius="50,0,50,0" Background="White" BorderBrush="#99ffc0c0" BorderThickness="5">
         <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="50*"/>
