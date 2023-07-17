@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_22_03_2023_WPF_kable_lisp_circle"
         mc:Ignorable="d"
-        Title="U-83_F_22-03-2023" Height="350" Width="600" WindowStartupLocation="CenterScreen"
+        Title="U-83_F_22-03-2023" Height="400" Width="600" WindowStartupLocation="CenterScreen"
         ToolTip="ввод диаметра кабеля и его имя. получаем lisp файл для загрузки в autocad">
     <Border CornerRadius="50,0,50,0" Background="White" BorderBrush="#99ffc0c0" BorderThickness="5">
         <Grid>
@@ -36,13 +36,13 @@
             <Image Stretch="Fill" Source="C:\Users\Fishman_1\Documents\GitHub\22-03-2023_WPF_kable_lisp_circle\water.jpg" 
                Grid.ColumnSpan="8" Grid.RowSpan="8" />
             <!-- для ввода данных-->
-
-            <TextBox x:Name="textbox1" Grid.ColumnSpan="2" TextWrapping="Wrap"
+            
+                <TextBox x:Name="textbox1" Grid.ColumnSpan="2" TextWrapping="Wrap"
                   VerticalScrollBarVisibility="Auto"
                  AcceptsReturn="True" Text="-701-1-K2" Margin="3"
                  Grid.Column="0" Grid.Row="1" Grid.RowSpan="5"
                  TextChanged="textbox1_TextChanged"/>
-
+           
             <TextBox x:Name="textbox2" Grid.ColumnSpan="2" TextWrapping="Wrap" 
                  VerticalScrollBarVisibility="Auto"
                  AcceptsReturn="True" Text="10" Margin="3"
@@ -60,19 +60,31 @@
                  AcceptsReturn="True"  Margin="3"
                  Grid.Column="6" Grid.Row="4" Grid.RowSpan="1"
                  Text = "{Binding Text, ElementName=textbox3, Mode=OneWay}"/>
-
-            <TextBlock x:Name="TextBlock_diameter" TextWrapping="Wrap" Text="Диаметр кабеля" 
+            <Border x:Name="Border1" CornerRadius="30" Background="White" 
+                    Grid.Column="3" Grid.ColumnSpan="2" Margin="10" >
+                <TextBlock x:Name="TextBlock_diameter" TextWrapping="Wrap" Text="Диаметр кабеля" 
                    Grid.Column="2" Grid.ColumnSpan="4" Margin="3" Background="White"
-                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
-            <TextBlock x:Name="TextBlock_diam_patr" TextWrapping="Wrap" Text="Диаметр патрубка" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center">
+                </TextBlock>
+                </Border>
+            <Border x:Name="Border2" CornerRadius="30" Background="White" 
+                    Grid.Column="6" Grid.ColumnSpan="2" Margin="10" >
+                <TextBlock x:Name="TextBlock_diam_patr" TextWrapping="Wrap" Text="Диаметр патрубка" 
                    Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="4" Margin="3" Background="White"
                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
-            <TextBlock x:Name="TextBlock_megos" TextWrapping="Wrap" Text="Межосевое расстояние"
+            </Border>
+            <Border x:Name="Border3" CornerRadius="30" Background="White" 
+                    Grid.Row="3" Grid.Column="6" Grid.ColumnSpan="2" Margin="10" >
+                <TextBlock x:Name="TextBlock_megos" TextWrapping="Wrap" Text=" Расстояние"
                    Grid.Row="3" Grid.Column="6" Grid.ColumnSpan="4" Margin="3" Background="White"
                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+            </Border>
+            <Border x:Name="Border0" CornerRadius="30" Background="White" 
+                    Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Margin="10" >
+                <TextBlock x:Name="TextBlock_Name" TextWrapping="Wrap" Background="White"
+                   Text="Имя кабеля" Grid.Column="0" Grid.ColumnSpan="2" Margin="3" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </Border>
             <Button x:Name="clear_name"  Content="очистить " Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"
                 Margin="5" Width="100" Height="25" Click="clear_name_Click"/>
 
@@ -80,35 +92,32 @@
                 Margin="5" Width="100" Height="25" Click="clear_diametr_Click"/>
 
             <!-- для сохранения файла-->
-
-            <Button x:Name="save_b" Content="собрать файл" Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="2" 
-                Margin="5" Click="save_b_Click" Width="100" Height="25"/>
-
+            
+                <Button x:Name="save_b" Content="собрать файл" Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="2" 
+                Margin="5" Click="save_b_Click" Width="100" Height="25" />
+            
             <TextBlock Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="3" Margin="5" 
                    Text="Сохранять в новый файл !!!"
                    VerticalAlignment="Center" >
-                <TextBlock.Foreground>
-                    <SolidColorBrush x:Name="MySolidColorBrush" Color="Black" />
-                </TextBlock.Foreground>
-
+                    <TextBlock.Foreground>
+                        <SolidColorBrush x:Name="MySolidColorBrush" Color="Black" />
+                    </TextBlock.Foreground>
         <!-- Animates the text block's color. -->
-                <TextBlock.Triggers>
-                    <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <ColorAnimation 
+                    <TextBlock.Triggers>
+                        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation 
             Storyboard.TargetName="MySolidColorBrush"
             Storyboard.TargetProperty="Color"
             From="Red" To="Green" Duration="0:0:3"
             AutoReverse="True" RepeatBehavior="Forever" />
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger>
-                </TextBlock.Triggers>
-            </TextBlock>
-            <TextBlock x:Name="TextBlock_Name" TextWrapping="Wrap" Background="White"
-                   Text="Имя кабеля" Grid.Column="0" Grid.ColumnSpan="2" Margin="3" 
-                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </TextBlock.Triggers>
+                </TextBlock>
+            
         </Grid>
     </Border>
 </Window>
