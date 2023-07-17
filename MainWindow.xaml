@@ -36,30 +36,55 @@
             <Image Stretch="Fill" Source="C:\Users\Fishman_1\Documents\GitHub\22-03-2023_WPF_kable_lisp_circle\water.jpg" 
                Grid.ColumnSpan="8" Grid.RowSpan="8" />
             <!-- для ввода данных-->
-            
-                <TextBox x:Name="textbox1" Grid.ColumnSpan="2" TextWrapping="Wrap"
+
+
+            <TextBox x:Name="textbox1" Grid.ColumnSpan="2" TextWrapping="Wrap"
                   VerticalScrollBarVisibility="Auto"
                  AcceptsReturn="True" Text="-701-1-K2" Margin="3"
                  Grid.Column="0" Grid.Row="1" Grid.RowSpan="5"
-                 TextChanged="textbox1_TextChanged"/>
-           
+                 TextChanged="textbox1_TextChanged">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+
             <TextBox x:Name="textbox2" Grid.ColumnSpan="2" TextWrapping="Wrap" 
                  VerticalScrollBarVisibility="Auto"
                  AcceptsReturn="True" Text="10" Margin="3"
                  Grid.Column="3" Grid.Row="1" Grid.RowSpan="5"
-                 TextChanged="textbox2_TextChanged"/>
+                 TextChanged="textbox2_TextChanged">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
 
             <TextBox x:Name="textbox3" Grid.ColumnSpan="2" TextWrapping="Wrap" 
-                 VerticalScrollBarVisibility="Auto"
-                 AcceptsReturn="True" Text="100" Margin="3"
+                  Text="100" Margin="3"
                  Grid.Column="6" Grid.Row="1" Grid.RowSpan="1"
-                 TextChanged="textbox3_TextChanged"/>
+                 TextChanged="textbox3_TextChanged">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
 
             <TextBox x:Name="textbox4" Grid.ColumnSpan="2" TextWrapping="Wrap" 
                  VerticalScrollBarVisibility="Auto"
-                 AcceptsReturn="True"  Margin="3"
+                   Margin="3"
                  Grid.Column="6" Grid.Row="4" Grid.RowSpan="1"
-                 Text = "{Binding Text, ElementName=textbox3, Mode=OneWay}"/>
+                 Text = "{Binding Text, ElementName=textbox3, Mode=OneWay}">
+                <TextBox.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="10"/>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+
             <Border x:Name="Border1" CornerRadius="30" Background="White" 
                     Grid.Column="3" Grid.ColumnSpan="2" Margin="10" >
                 <TextBlock x:Name="TextBlock_diameter" TextWrapping="Wrap" Text="Диаметр кабеля" 
@@ -87,7 +112,6 @@
             </Border>
             <Button x:Name="clear_name"  Content="очистить " Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"
                 Margin="5" Width="100" Height="25" Click="clear_name_Click"/>
-
             <Button x:Name="clear_diametr"  Content="очистить " Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="2"
                 Margin="5" Width="100" Height="25" Click="clear_diametr_Click"/>
 
