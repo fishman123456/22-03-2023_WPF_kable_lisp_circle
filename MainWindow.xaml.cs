@@ -48,8 +48,20 @@ namespace _22_03_2023_WPF_kable_lisp_circle
                  ";координата Y\r\n  " +
                  "(setq x1 (getreal \"enter the beginning X: \")) " +
                  ";координата X\r\n" +
-                 "  (setq radpat (getreal \"enter the radius of the pipe: \")) ;радиус патрубка\r\n" +
-                 "  (setq megos (getreal \"enter the center distance: \"))\r\n" +
+
+                   // берем диаметры из окна
+                   "   (setq diampat " + textbox3.Text + " ) \n\r "+
+                  // делаем ввод диаметров. Стас попросил 17-07-2023
+                 // "  ; (setq diampat (getreal \"enter the diameter of the pipe: \")) ;диаметр патрубка\r\n" +
+
+
+                 // преобразуем диаметры в радиусы
+                 "   (setq radpat ( / diampat 2)) ; преобразуем диаметр в радиус\r\n" +
+
+                 // берем межосевое из окна
+                 "(setq megos " + textbox4.Text + " )\r\n" +
+                 //"  (setq megos (getreal \"enter the center distance: \"))\r\n" +
+
                  "  ; межосевое расстояние  отрисовка вверх потом доделаю отрисовка вправо с переносом вниз\r\n" +
                  "  ;межосевое расстояние\r\n" +
                  "  (setq y2 0) ; вспомогательная\r\n" +
@@ -67,7 +79,7 @@ namespace _22_03_2023_WPF_kable_lisp_circle
                  "  (setq explanation 1) ; пояснение для слоя - а так номер трубы\r\n  " +
                  "_______________________________________________________________________________\r\n " +
                  " (foreach circl3 \r\n  " +
-                 "  '(; Список диаметров берем из кабельного журнала - впоследствии база данных ");
+                 "  '(; Список диаметров берем из кабельного журнала - впоследствии база данных ") ;
             #endregion
             // вставыляем данные из texbox2 - диаметры
             kable_d_l += "\n" + textbox2.Text + " ";
@@ -218,16 +230,6 @@ namespace _22_03_2023_WPF_kable_lisp_circle
             }
 
         }
-
-        private void clear_Click(object sender, RoutedEventArgs e)
-        {
-            textbox1?.Clear();
-            textbox2?.Clear();
-            list_name.Clear();
-        }
-
-
-
         private void textbox_equally_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -245,6 +247,23 @@ namespace _22_03_2023_WPF_kable_lisp_circle
                 Application.Current.Shutdown();
                 //w1.Close();
             }
+        }
+
+        private void clear_name_Click(object sender, RoutedEventArgs e)
+        {
+            textbox1?.Clear();
+            list_name.Clear();
+        }
+
+        private void clear_diametr_Click(object sender, RoutedEventArgs e)
+        {
+            textbox2?.Clear();
+            list_name.Clear();
+        }
+
+        private void textbox3_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            
         }
     }
 }

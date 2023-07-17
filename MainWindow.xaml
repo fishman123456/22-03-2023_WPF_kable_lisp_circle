@@ -15,6 +15,7 @@
             <RowDefinition Height="50*"/>
             <RowDefinition Height="50*"/>
             <RowDefinition Height="50*"/>
+            <RowDefinition Height="50*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*"/>
@@ -24,26 +25,64 @@
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="50*"/>
-
-
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="50*"/>
         </Grid.ColumnDefinitions>
-        <Button Name="save_b" Content="собрать файл" Grid.Row="6" Grid.Column="4" Grid.ColumnSpan="3" 
-                Margin="5" Click="save_b_Click" Width="100" Height="30"/>
-        <TextBox Name="textbox1" Grid.ColumnSpan="3" TextWrapping="Wrap"
+        
+       
+        
+        <!-- для ввода данных-->
+        
+        <TextBox Name="textbox1" Grid.ColumnSpan="2" TextWrapping="Wrap"
                   VerticalScrollBarVisibility="Auto"
                  AcceptsReturn="True" Text="-701-1-K2" Margin="3"
                  Grid.Column="0" Grid.Row="1" Grid.RowSpan="5"
                  TextChanged="textbox1_TextChanged"/>
-        <TextBox Name="textbox2" Grid.ColumnSpan="3" TextWrapping="Wrap" 
+        
+        <TextBox Name="textbox2" Grid.ColumnSpan="2" TextWrapping="Wrap" 
                  VerticalScrollBarVisibility="Auto"
                  AcceptsReturn="True" Text="10" Margin="3"
-                 Grid.Column="4" Grid.Row="1" Grid.RowSpan="5"
+                 Grid.Column="3" Grid.Row="1" Grid.RowSpan="5"
                  TextChanged="textbox2_TextChanged"/>
-        <TextBlock x:Name="TextBlock_Name" TextWrapping="Wrap" Text="Имя кабеля" Grid.Column="0" Grid.ColumnSpan="3" Margin="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <TextBlock x:Name="TextBlock_diameter" TextWrapping="Wrap" Text="Диаметр кабеля" Grid.Column="4" Grid.ColumnSpan="3" Margin="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Button Name="clear"  Content="очистить " Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3"
-                Margin="5" Width="100" Height="30" Click="clear_Click"/>
-        <TextBlock Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="3" Margin="10" Text="Сохранять в новый файл !!!"
+        
+        <TextBox Name="textbox3" Grid.ColumnSpan="2" TextWrapping="Wrap" 
+                 VerticalScrollBarVisibility="Auto"
+                 AcceptsReturn="True" Text="100" Margin="3"
+                 Grid.Column="6" Grid.Row="1" Grid.RowSpan="1"
+                 TextChanged="textbox3_TextChanged"/>
+        
+        <TextBox Name="textbox4" Grid.ColumnSpan="2" TextWrapping="Wrap" 
+                 VerticalScrollBarVisibility="Auto"
+                 AcceptsReturn="True"  Margin="3"
+                 Grid.Column="6" Grid.Row="4" Grid.RowSpan="1"
+                 Text = "{Binding ElementName=textbox3,Path=Text}"/>
+
+        <TextBlock x:Name="TextBlock_Name" TextWrapping="Wrap" Text="Имя кабеля" Grid.Column="0" Grid.ColumnSpan="2" Margin="3" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        
+        <TextBlock x:Name="TextBlock_diameter" TextWrapping="Wrap" Text="Диаметр кабеля" Grid.Column="2" Grid.ColumnSpan="4" Margin="3" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <TextBlock x:Name="TextBlock_diam_patr" TextWrapping="Wrap" Text="Диаметр патрубка" 
+                   Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="4" Margin="3" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <TextBlock x:Name="TextBlock_megos" TextWrapping="Wrap" Text="Межосевое расстояние" 
+                   Grid.Row="3" Grid.Column="5" Grid.ColumnSpan="4" Margin="3" 
+                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+        <Button Name="clear_name"  Content="очистить " Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"
+                Margin="5" Width="100" Height="30" Click="clear_name_Click"/>
+
+        <Button Name="clear_diametr"  Content="очистить " Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="2"
+                Margin="5" Width="100" Height="30" Click="clear_diametr_Click"/>
+
+        <!-- для сохранения файла-->
+
+        <Button Name="save_b" Content="собрать файл" Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="2" 
+                Margin="5" Click="save_b_Click" Width="100" Height="30"/>
+
+        <TextBlock Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="3" Margin="10" Text="Сохранять в новый файл !!!"
                    VerticalAlignment="Center" HorizontalAlignment="Center"/>
     </Grid>
 </Window>
