@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_22_03_2023_WPF_kable_lisp_circle"
         mc:Ignorable="d"
-        Title="U-83_F_22-03-2023" Height="350" Width="556" WindowStartupLocation="CenterScreen" ToolTip="ввод диаметра кабеля и его имя. получаем lisp файл для загрузки в autocad">
+        Title="U-83_F_22-03-2023" Height="350" Width="600" WindowStartupLocation="CenterScreen" ToolTip="ввод диаметра кабеля и его имя. получаем lisp файл для загрузки в autocad">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50*"/>
@@ -65,10 +65,10 @@
                    Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="4" Margin="3" 
                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <TextBlock x:Name="TextBlock_megos" TextWrapping="Wrap" Text="Межосевое расстояние" 
+        <TextBlock x:Name="TextBlock_megos" TextWrapping="Wrap" Text="Межосевое расстояние"
                    Grid.Row="3" Grid.Column="6" Grid.ColumnSpan="4" Margin="3" 
                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
-
+            
         <Button Name="clear_name"  Content="очистить " Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"
                 Margin="5" Width="100" Height="25" Click="clear_name_Click"/>
 
