@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_22_03_2023_WPF_kable_lisp_circle"
         mc:Ignorable="d"
-        Title="U-83_F_22-03-2023" Height="350" Width="300" WindowStartupLocation="CenterScreen" ToolTip="ввод диаметра кабеля и его имя. получаем lisp файл для загрузки в autocad">
+        Title="U-83_F_22-03-2023" Height="350" Width="556" WindowStartupLocation="CenterScreen" ToolTip="ввод диаметра кабеля и его имя. получаем lisp файл для загрузки в autocad">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50*"/>
@@ -39,10 +39,11 @@
                  AcceptsReturn="True" Text="10" Margin="3"
                  Grid.Column="4" Grid.Row="1" Grid.RowSpan="5"
                  TextChanged="textbox2_TextChanged"/>
-        <TextBlock TextWrapping="Wrap" Text="Имя кабеля" Grid.Column="0" Grid.ColumnSpan="3" Margin="3"/>
-        <TextBlock TextWrapping="Wrap" Text="Диаметр кабеля" Grid.Column="4" Grid.ColumnSpan="3" Margin="3"/>
+        <TextBlock x:Name="TextBlock_Name" TextWrapping="Wrap" Text="Имя кабеля" Grid.Column="0" Grid.ColumnSpan="3" Margin="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <TextBlock x:Name="TextBlock_diameter" TextWrapping="Wrap" Text="Диаметр кабеля" Grid.Column="4" Grid.ColumnSpan="3" Margin="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Button Name="clear"  Content="очистить " Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3"
                 Margin="5" Width="100" Height="30" Click="clear_Click"/>
+        <TextBox Name="textbox_equally" TextWrapping="Wrap" Grid.Column="3" Grid.Row="0" Margin="5" TextChanged="textbox_equally_TextChanged"/>
 
     </Grid>
 </Window>

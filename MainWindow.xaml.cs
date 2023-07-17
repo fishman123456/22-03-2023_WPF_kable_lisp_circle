@@ -27,6 +27,7 @@ namespace _22_03_2023_WPF_kable_lisp_circle
         public MainWindow()
         {
             InitializeComponent();
+           
 
         }
         //   public StringBuilder st = new StringBuilder();
@@ -171,17 +172,18 @@ kable_d_l += ")\n";
 
         private void textbox1_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
         }
 
         private void textbox2_TextChanged(object sender, TextChangedEventArgs e)
 
         {
-
+           
         }
 
         private void save_b_Click(object sender, RoutedEventArgs e)
         {
+            CheckDate();
+
             string[] separator = { "\n", "\r" };
             // добавляем данные в список
             string[] texbox1_str_spl = textbox1.Text.Split(separator, StringSplitOptions.RemoveEmptyEntries);
@@ -223,5 +225,25 @@ kable_d_l += ")\n";
             textbox2?.Clear();
             list_name.Clear();
         }
-    }
+
+     
+
+        private void textbox_equally_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+        public static void CheckDate()
+        {
+            DateTime dt1 = DateTime.Now;
+            DateTime dt2 = DateTime.Parse("27/09/2023");
+            Window w1 = new Window();
+
+            if (dt1.Date > dt2.Date)
+            {
+                MessageBox.Show("Your Application is Expire");
+                // Выход из проложения добавил 12-07-2023. Чтобы порядок был....
+                Application.Current.Shutdown();
+                //w1.Close();
+            }
+        }
 }
