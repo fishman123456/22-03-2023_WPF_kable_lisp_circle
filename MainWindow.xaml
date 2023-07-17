@@ -16,6 +16,7 @@
             <RowDefinition Height="50*"/>
             <RowDefinition Height="50*"/>
             <RowDefinition Height="50*"/>
+           
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50*"/>
@@ -26,11 +27,8 @@
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="50*"/>
             <ColumnDefinition Width="50*"/>
-            <ColumnDefinition Width="50*"/>
+           
         </Grid.ColumnDefinitions>
-        
-       
-        
         <!-- для ввода данных-->
         
         <TextBox Name="textbox1" Grid.ColumnSpan="2" TextWrapping="Wrap"
@@ -64,25 +62,45 @@
                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
         <TextBlock x:Name="TextBlock_diam_patr" TextWrapping="Wrap" Text="Диаметр патрубка" 
-                   Grid.Row="0" Grid.Column="5" Grid.ColumnSpan="4" Margin="3" 
+                   Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="4" Margin="3" 
                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
         <TextBlock x:Name="TextBlock_megos" TextWrapping="Wrap" Text="Межосевое расстояние" 
-                   Grid.Row="3" Grid.Column="5" Grid.ColumnSpan="4" Margin="3" 
+                   Grid.Row="3" Grid.Column="6" Grid.ColumnSpan="4" Margin="3" 
                    HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
         <Button Name="clear_name"  Content="очистить " Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"
-                Margin="5" Width="100" Height="30" Click="clear_name_Click"/>
+                Margin="5" Width="100" Height="25" Click="clear_name_Click"/>
 
         <Button Name="clear_diametr"  Content="очистить " Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="2"
-                Margin="5" Width="100" Height="30" Click="clear_diametr_Click"/>
+                Margin="5" Width="100" Height="25" Click="clear_diametr_Click"/>
 
         <!-- для сохранения файла-->
 
         <Button Name="save_b" Content="собрать файл" Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="2" 
-                Margin="5" Click="save_b_Click" Width="100" Height="30"/>
+                Margin="5" Click="save_b_Click" Width="100" Height="25"/>
 
-        <TextBlock Grid.Row="7" Grid.Column="2" Grid.ColumnSpan="3" Margin="10" Text="Сохранять в новый файл !!!"
-                   VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="3" Margin="5" 
+                   Text="Сохранять в новый файл !!!"
+                   VerticalAlignment="Center" >
+            <TextBlock.Foreground>
+            <SolidColorBrush x:Name="MySolidColorBrush" Color="Black" />
+        </TextBlock.Foreground>
+
+        <!-- Animates the text block's color. -->
+        <TextBlock.Triggers>
+            <EventTrigger RoutedEvent="TextBlock.Loaded">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <ColorAnimation 
+            Storyboard.TargetName="MySolidColorBrush"
+            Storyboard.TargetProperty="Color"
+            From="Red" To="Green" Duration="0:0:3"
+            AutoReverse="True" RepeatBehavior="Forever" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </TextBlock.Triggers>
+        </TextBlock>
     </Grid>
 </Window>

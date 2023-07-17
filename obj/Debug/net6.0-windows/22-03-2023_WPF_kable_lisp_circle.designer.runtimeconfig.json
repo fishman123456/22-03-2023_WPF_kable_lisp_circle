@@ -12,9 +12,8 @@
       }
     ],
     "additionalProbingPaths": [
-      "C:\\Users\\Fishman.DB.CORP\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Fishman.DB.CORP\\.nuget\\packages",
-      "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      "C:\\Users\\Fishman_1\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Fishman_1\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
