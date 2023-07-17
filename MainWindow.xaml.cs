@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -182,16 +183,6 @@ namespace _22_03_2023_WPF_kable_lisp_circle
             #endregion
         }
 
-        private void textbox1_TextChanged(object sender, TextChangedEventArgs e)
-        {
-        }
-
-        private void textbox2_TextChanged(object sender, TextChangedEventArgs e)
-
-        {
-
-        }
-
         private void save_b_Click(object sender, RoutedEventArgs e)
         {
             CheckDate();
@@ -261,9 +252,46 @@ namespace _22_03_2023_WPF_kable_lisp_circle
             list_name.Clear();
         }
 
+        private void textbox1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void NumberValidationTextBox2(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9.]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+        private void NumberValidationTextBox3(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+        private void NumberValidationTextBox4(object sender, TextCompositionEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9]+");
+            e.Handled = regex.IsMatch(e.Text);
+        }
+
+        private void textbox2_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
         private void textbox3_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
+
+        }
+
+        private void textbox4_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void replacement_Click(object sender, RoutedEventArgs e)
+        {
+            List<string> list = new List<string>();
+            list.Add(textbox2.Text);
         }
     }
 }
