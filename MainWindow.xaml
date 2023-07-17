@@ -43,7 +43,7 @@
         <TextBlock x:Name="TextBlock_diameter" TextWrapping="Wrap" Text="Диаметр кабеля" Grid.Column="4" Grid.ColumnSpan="3" Margin="3" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Button Name="clear"  Content="очистить " Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3"
                 Margin="5" Width="100" Height="30" Click="clear_Click"/>
-        <TextBox Name="textbox_equally" TextWrapping="Wrap" Grid.Column="3" Grid.Row="0" Margin="5" TextChanged="textbox_equally_TextChanged"/>
-
+        <TextBlock Grid.Row="6" Grid.Column="2" Grid.ColumnSpan="3" Margin="10" Text="Сохранять в новый файл !!!"
+                   VerticalAlignment="Center" HorizontalAlignment="Center"/>
     </Grid>
 </Window>

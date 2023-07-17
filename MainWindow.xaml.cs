@@ -27,11 +27,11 @@ namespace _22_03_2023_WPF_kable_lisp_circle
         public MainWindow()
         {
             InitializeComponent();
-           
+
 
         }
         //   public StringBuilder st = new StringBuilder();
-      public  List<string> list_name = new List<string>();
+        public List<string> list_name = new List<string>();
         public string kable_d_l;
         public void concat()
         {
@@ -85,87 +85,87 @@ namespace _22_03_2023_WPF_kable_lisp_circle
             #region
             kable_d_l += ")\n";
             kable_d_l += ")\n";
-    kable_d_l += ")\n";
+            kable_d_l += ")\n";
 
-  kable_d_l += "(command \"_.-layer\" \"_m\" lay \"\") ; создаем слои на основе списка \"nth N_lay\" и делаем его текущим для именования кабеля\n";
-  kable_d_l += "  (setq circl(/ circl3 2))\n";
+            kable_d_l += "(command \"_.-layer\" \"_m\" lay \"\") ; создаем слои на основе списка \"nth N_lay\" и делаем его текущим для именования кабеля\n";
+            kable_d_l += "  (setq circl(/ circl3 2))\n";
             kable_d_l += " ; преобразуем диаметр в радиус ВНИМАНИЕ ПРОГРАММА РАБОТАЕТ С РАДИУСАМИ\n";
             kable_d_l += "(setq S1(* 3.14(* circl circl)))\n";
-    kable_d_l += "(setq x2(+ last1 circl))\n";
+            kable_d_l += "(setq x2(+ last1 circl))\n";
             kable_d_l += "; складываем настоящий и преведущий радиус\n";
-    kable_d_l += "(setq x1(+ x2 x1)); координата по X\n";
+            kable_d_l += "(setq x1(+ x2 x1)); координата по X\n";
             kable_d_l += " (if (> last1 circl)\n";
             kable_d_l += "  ; last1 > circl; то y2 = last1 т.е преведущий диаметр.Отступаем по Y по максимальному диаметру\n";
             kable_d_l += "  (setq y2 (* 2 last1))\n";
             kable_d_l += "  ; при переборе радиусов из списка.Переменная circl\n";
             kable_d_l += ")\n";
-    kable_d_l += "(if (> circl last1)\n ";
-    kable_d_l += "  ; last1 > circl; то y2 = last1 т.е преведущий диаметр.Отступаем по Y по максимальному диаметру\n";
-    kable_d_l += "  (setq y2 (* 2 circl))\n";
-    kable_d_l += "  ; при переборе радиусов из списка.Переменная circl\n";
-    kable_d_l += ")\n";
-    kable_d_l += "(if (>= x1 radpat) \n";
-    kable_d_l += "  ; ; ограничение кабеля по X\n";
-    kable_d_l += "  (progn\n";
-    kable_d_l += "    (setq y1 (+ y2 y1))\n";
-    kable_d_l += "    ; ; увеличиваем Y на диаметр кабеля(*2 last1)\n";
-    kable_d_l += "    (setq y3(+ y2 y3))\n";
-    kable_d_l += "    (setq x1 0)\n";
-    kable_d_l += "  )\n";
-    kable_d_l += ")\n";
-    kable_d_l += ";description\n";
-    kable_d_l += "      ; (if (>= circl 13.0)\n";
-    kable_d_l += "; ; максимальный диаметр одного кабеля\n";
-    kable_d_l += "; (progn\n";
-    kable_d_l += "; (setq y3 circl)\n";
-    kable_d_l += "; (setq y1(+ megos(- y1 y2)))\n";
-    kable_d_l += "; (setq x1 0)\n";
-    kable_d_l += "; (setq explanation(+ 1 explanation))\n";
-    kable_d_l += "; ; пояснение для слоя - а так номер трубы увеличиваем на 1 при переходе в другой патрубок\n";
-    kable_d_l += ";       )\n";
-    kable_d_l += ";     )\n";
-    kable_d_l += ";\n";
-    kable_d_l += "        (if (>= y3 radpat) \n";
-    kable_d_l += "  ; переход по Y межосевое\n";
-    kable_d_l += "  (progn\n";
-    kable_d_l += "    (setq y1 (+ megos(- y1 y3)))\n";
-    kable_d_l += "    (setq y3 0)\n";
-    kable_d_l += "    (setq x1 0)\n";
-    kable_d_l += "    (setq explanation(+ 1 explanation))\n";
-    kable_d_l += "    ; пояснение для слоя - а так номер трубы увеличиваем на 1 при переходе в другой патрубок\n";
-    kable_d_l += "  )\n";
-    kable_d_l += ")\n";
-    kable_d_l += "(print y1)\n";
-    kable_d_l += "(print y3)\n";
-    kable_d_l += "(print x1)\n";
-    kable_d_l += "; (vla - put - description\n";
-    kable_d_l += "; (vlax - ename->vla - object(tblobjname \"LAYER\" lay))\n";
-    kable_d_l += "; explanation\n";
-    kable_d_l += "; ) ; для создания примечаний** пока не используем\n";
-    kable_d_l += "; ; ; (command \"_point\"(list x1 y1))\n";
-    kable_d_l += "; ; ; ; Черчение точки; перебор 1 - 861\n";
-    kable_d_l += "; ; ; (command\n";
-    kable_d_l += "; ; ; \"_text\"\n";
+            kable_d_l += "(if (> circl last1)\n ";
+            kable_d_l += "  ; last1 > circl; то y2 = last1 т.е преведущий диаметр.Отступаем по Y по максимальному диаметру\n";
+            kable_d_l += "  (setq y2 (* 2 circl))\n";
+            kable_d_l += "  ; при переборе радиусов из списка.Переменная circl\n";
+            kable_d_l += ")\n";
+            kable_d_l += "(if (>= x1 radpat) \n";
+            kable_d_l += "  ; ; ограничение кабеля по X\n";
+            kable_d_l += "  (progn\n";
+            kable_d_l += "    (setq y1 (+ y2 y1))\n";
+            kable_d_l += "    ; ; увеличиваем Y на диаметр кабеля(*2 last1)\n";
+            kable_d_l += "    (setq y3(+ y2 y3))\n";
+            kable_d_l += "    (setq x1 0)\n";
+            kable_d_l += "  )\n";
+            kable_d_l += ")\n";
+            kable_d_l += ";description\n";
+            kable_d_l += "      ; (if (>= circl 13.0)\n";
+            kable_d_l += "; ; максимальный диаметр одного кабеля\n";
+            kable_d_l += "; (progn\n";
+            kable_d_l += "; (setq y3 circl)\n";
+            kable_d_l += "; (setq y1(+ megos(- y1 y2)))\n";
+            kable_d_l += "; (setq x1 0)\n";
+            kable_d_l += "; (setq explanation(+ 1 explanation))\n";
+            kable_d_l += "; ; пояснение для слоя - а так номер трубы увеличиваем на 1 при переходе в другой патрубок\n";
+            kable_d_l += ";       )\n";
+            kable_d_l += ";     )\n";
+            kable_d_l += ";\n";
+            kable_d_l += "        (if (>= y3 radpat) \n";
+            kable_d_l += "  ; переход по Y межосевое\n";
+            kable_d_l += "  (progn\n";
+            kable_d_l += "    (setq y1 (+ megos(- y1 y3)))\n";
+            kable_d_l += "    (setq y3 0)\n";
+            kable_d_l += "    (setq x1 0)\n";
+            kable_d_l += "    (setq explanation(+ 1 explanation))\n";
+            kable_d_l += "    ; пояснение для слоя - а так номер трубы увеличиваем на 1 при переходе в другой патрубок\n";
+            kable_d_l += "  )\n";
+            kable_d_l += ")\n";
+            kable_d_l += "(print y1)\n";
+            kable_d_l += "(print y3)\n";
+            kable_d_l += "(print x1)\n";
+            kable_d_l += "; (vla - put - description\n";
+            kable_d_l += "; (vlax - ename->vla - object(tblobjname \"LAYER\" lay))\n";
+            kable_d_l += "; explanation\n";
+            kable_d_l += "; ) ; для создания примечаний** пока не используем\n";
+            kable_d_l += "; ; ; (command \"_point\"(list x1 y1))\n";
+            kable_d_l += "; ; ; ; Черчение точки; перебор 1 - 861\n";
+            kable_d_l += "; ; ; (command\n";
+            kable_d_l += "; ; ; \"_text\"\n";
             kable_d_l += "; ; ; (list x1 y1)\n";
-    kable_d_l += "; ; ; \"1\"\n";
-    kable_d_l += "; ; ; \"0\"\n";
-    kable_d_l += "; ; ; (rtos circl3 2 2)\n";
-    kable_d_l += "; ; ; \"\"\n";
-    kable_d_l += "; ; ;    )\n";
-    kable_d_l += "; Черчение диаметра по списку; перебор 1 - 861\n";
-    kable_d_l += "(command \"_circle\"(list x1 y1) circl)\n";
-    kable_d_l += "; Черчение кабелей по списку; перебор 1 - 861\n";
-    kable_d_l += "(setq last1 circl)\n";
-    kable_d_l += "; присваемаем значение отрисованного круга для сложения с радиусом нового круга\n";
-    kable_d_l += "(setq N_lay (+ 1 N_lay)) ; следующий по списку слоев идем от нуля \"0\" нуль - это первый из списка\n";
-    kable_d_l += "(prin1 lay)\n";
-  kable_d_l += ")\n";
+            kable_d_l += "; ; ; \"1\"\n";
+            kable_d_l += "; ; ; \"0\"\n";
+            kable_d_l += "; ; ; (rtos circl3 2 2)\n";
+            kable_d_l += "; ; ; \"\"\n";
+            kable_d_l += "; ; ;    )\n";
+            kable_d_l += "; Черчение диаметра по списку; перебор 1 - 861\n";
+            kable_d_l += "(command \"_circle\"(list x1 y1) circl)\n";
+            kable_d_l += "; Черчение кабелей по списку; перебор 1 - 861\n";
+            kable_d_l += "(setq last1 circl)\n";
+            kable_d_l += "; присваемаем значение отрисованного круга для сложения с радиусом нового круга\n";
+            kable_d_l += "(setq N_lay (+ 1 N_lay)) ; следующий по списку слоев идем от нуля \"0\" нуль - это первый из списка\n";
+            kable_d_l += "(prin1 lay)\n";
+            kable_d_l += ")\n";
 
-  kable_d_l += "________________________________________________________________________________________\n";
-  kable_d_l += "(alert \"Закончили\")\n";
-  kable_d_l += "(command \"_OSMODE\" \"5887\")\n";
-  kable_d_l += "; включение режима 2D привязка\n";
-kable_d_l += ")\n";
+            kable_d_l += "________________________________________________________________________________________\n";
+            kable_d_l += "(alert \"Закончили\")\n";
+            kable_d_l += "(command \"_OSMODE\" \"5887\")\n";
+            kable_d_l += "; включение режима 2D привязка\n";
+            kable_d_l += ")\n";
 
             #endregion
         }
@@ -177,7 +177,7 @@ kable_d_l += ")\n";
         private void textbox2_TextChanged(object sender, TextChangedEventArgs e)
 
         {
-           
+
         }
 
         private void save_b_Click(object sender, RoutedEventArgs e)
@@ -190,11 +190,11 @@ kable_d_l += ")\n";
             int count = 0;
             foreach (var item in texbox1_str_spl)
             {
-                
+
                 list_name.Add(texbox1_str_spl[count]);
                 count++;
             }
-            
+
             concat();
 
             SaveFileDialog dialog = new SaveFileDialog();
@@ -226,7 +226,7 @@ kable_d_l += ")\n";
             list_name.Clear();
         }
 
-     
+
 
         private void textbox_equally_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -246,4 +246,5 @@ kable_d_l += ")\n";
                 //w1.Close();
             }
         }
+    }
 }
