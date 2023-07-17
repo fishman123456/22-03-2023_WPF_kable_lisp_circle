@@ -44,12 +44,12 @@ namespace _22_03_2023_WPF_kable_lisp_circle
                  "(vl-load-com) ; подключаем ActiveX для создания слоев и в последующем примечаний/////----" +
                  "\r\n  (command \"_OSMODE\" \"0\") ; отключение режима 2D привязка\r\n  " +
                  "(initget 133) ; ограничения ввода данных 1 пустой ввод + 4 ввод отриц чисел 128 произвольный ввод;разрешен 2 ввод нуля и полож знач\r\n " +
-                 " (setq y1 (getreal \"введите Y: \")) " +
+                 " (setq y1 (getreal \"enter the beginning Y: \")) " +
                  ";координата Y\r\n  " +
-                 "(setq x1 (getreal \"введите X: \")) " +
+                 "(setq x1 (getreal \"enter the beginning X: \")) " +
                  ";координата X\r\n" +
-                 "  (setq radpat (getreal \"введите радиус патрубка: \")) ;радиус патрубка\r\n" +
-                 "  (setq megos (getreal \"введите межосевое расстояние: \"))\r\n" +
+                 "  (setq radpat (getreal \"enter the radius of the pipe: \")) ;радиус патрубка\r\n" +
+                 "  (setq megos (getreal \"enter the center distance: \"))\r\n" +
                  "  ; межосевое расстояние  отрисовка вверх потом доделаю отрисовка вправо с переносом вниз\r\n" +
                  "  ;межосевое расстояние\r\n" +
                  "  (setq y2 0) ; вспомогательная\r\n" +
@@ -162,7 +162,7 @@ namespace _22_03_2023_WPF_kable_lisp_circle
             kable_d_l += ")\n";
 
             kable_d_l += "________________________________________________________________________________________\n";
-            kable_d_l += "(alert \"Закончили\")\n";
+            kable_d_l += "(alert \"Finished\")\n";
             kable_d_l += "(command \"_OSMODE\" \"5887\")\n";
             kable_d_l += "; включение режима 2D привязка\n";
             kable_d_l += ")\n";
