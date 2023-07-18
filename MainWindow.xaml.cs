@@ -25,22 +25,25 @@ namespace _22_03_2023_WPF_kable_lisp_circle
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
-            // пробовал картинку вставить
-            //Image myImage = new Image();
-            //BitmapImage bi = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "/22-03-2023_WPF_kable_lisp_circle/water.jpg", UriKind.RelativeOrAbsolute));
-            //myImage.Source = bi;
-            //MyGrid.Children.Add(myImage);
-           
+            
         }
-
+       
         //   public StringBuilder st = new StringBuilder();
+
         public List<string> list_name = new List<string>();
         public string kable_d_l;
+
         public void concat()
         {
+            //Uri src = new Uri(@"/MemoryWPF;Debug/net6.0-windows/water.jpg", UriKind.Relative);
+            //BitmapImage bImg = new BitmapImage(src);
+            //Image img = new Image();
+            //img.Source = bImg;
+            //myImage.Source = new BitmapImage(new Uri("water.jpg", UriKind.Relative));
             #region
             kable_d_l = ("; Начало оптимизации прорисовки кабелей по трубам\r\n\t\t\t" +
                  "; 1) Добавление слоев 19.03.2019\r\n" +
@@ -307,5 +310,6 @@ namespace _22_03_2023_WPF_kable_lisp_circle
             textbox2.Text = result;
             
         }
+
     }
 }

@@ -35,11 +35,25 @@
 
             </Grid.ColumnDefinitions>
             <!-- для ввода данных-->
-           
-            <Image Name="myImage" Stretch="Fill" 
-               Grid.ColumnSpan="8" Grid.RowSpan="8" />
-            
-            <!-- <Image.Source="/{water.jpg}"-->
+            <!--="pack://application:,,,/22-03-2023_WPF_kable_lisp_circle/water.jpg"/>-->
+            <!--:\Users\Fishman.DB.CORP\Documents\GitHub\22-03-2023_WPF_kable_lisp_circle\water.jpg-->
+
+            <!-- для ввода данных-->
+
+            <!--C:\Users\Fishman.DB.CORP\Documents\GitHub\22-03-2023_WPF_kable_lisp_circle\bin\Debug\net6.0-windows\water.jpg-->
+            <!-- для ввода данных-->
+
+
+            <!-- для ввода данных-->
+
+
+            <Image x:Name="myImage" Stretch="Fill" 
+               Grid.ColumnSpan="8" Grid.RowSpan="8">
+                <Image.Source>
+                    <BitmapImage UriSource = "/Images/water.jpg" />
+                </Image.Source>
+            </Image>
+
             <!-- для ввода данных-->
 
 
@@ -97,8 +111,7 @@
                     Grid.Column="3" Grid.ColumnSpan="2" Margin="10" >
                 <TextBlock x:Name="TextBlock_diameter" TextWrapping="Wrap" Text="Диаметр кабеля" 
                    Grid.Column="2" Grid.ColumnSpan="4" Margin="3" Background="White"
-                   HorizontalAlignment="Center" VerticalAlignment="Center">
-                </TextBlock>
+                   HorizontalAlignment="Center" VerticalAlignment="Center"/>
             </Border>
             <Border x:Name="Border2" CornerRadius="30" Background="White" 
                     Grid.Column="6" Grid.ColumnSpan="2" Margin="10" >
@@ -127,11 +140,11 @@
 
             <Button x:Name="save_b" Content="собрать файл" Grid.Row="6" Grid.Column="6" Grid.ColumnSpan="2" 
                 Margin="5" Click="save_b_Click" Width="100" Height="25" />
-            
+
             <!-- замена запятой на точки-->
-            <Button Name="replacement" Grid.Row="1" Grid.Column="5" 
+            <Button x:Name="replacement" Grid.Row="1" Grid.Column="5" 
                     Grid.RowSpan="5" Grid.ColumnSpan="1" Margin="15" Click="replacement_Click">
-                <TextBlock  Text="меняем , на ." Width="8" TextWrapping="Wrap"></TextBlock>
+                <TextBlock  Text="меняем , на ." Width="8" TextWrapping="Wrap"/>
             </Button>
 
             <TextBlock Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="3" Margin="5" 
