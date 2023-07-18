@@ -28,9 +28,14 @@ namespace _22_03_2023_WPF_kable_lisp_circle
         public MainWindow()
         {
             InitializeComponent();
-
-
+            // пробовал картинку вставить
+            //Image myImage = new Image();
+            //BitmapImage bi = new BitmapImage(new Uri(Directory.GetCurrentDirectory() + "/22-03-2023_WPF_kable_lisp_circle/water.jpg", UriKind.RelativeOrAbsolute));
+            //myImage.Source = bi;
+            //MyGrid.Children.Add(myImage);
+           
         }
+
         //   public StringBuilder st = new StringBuilder();
         public List<string> list_name = new List<string>();
         public string kable_d_l;
@@ -51,8 +56,8 @@ namespace _22_03_2023_WPF_kable_lisp_circle
                  ";координата X\r\n" +
 
                    // берем диаметры из окна
-                   "   (setq diampat " + textbox3.Text + " ) \n\r "+
-                  // делаем ввод диаметров. Стас попросил 17-07-2023
+                   "   (setq diampat " + textbox3.Text + " ) \n\r " +
+                 // делаем ввод диаметров. Стас попросил 17-07-2023
                  // "  ; (setq diampat (getreal \"enter the diameter of the pipe: \")) ;диаметр патрубка\r\n" +
 
 
@@ -80,7 +85,7 @@ namespace _22_03_2023_WPF_kable_lisp_circle
                  "  (setq explanation 1) ; пояснение для слоя - а так номер трубы\r\n  " +
                  "_______________________________________________________________________________\r\n " +
                  " (foreach circl3 \r\n  " +
-                 "  '(; Список диаметров берем из кабельного журнала - впоследствии база данных ") ;
+                 "  '(; Список диаметров берем из кабельного журнала - впоследствии база данных ");
             #endregion
             // вставыляем данные из texbox2 - диаметры
             kable_d_l += "\n" + textbox2.Text + " ";
@@ -259,7 +264,7 @@ namespace _22_03_2023_WPF_kable_lisp_circle
 
         private void NumberValidationTextBox2(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[^0-9.]+");
+            Regex regex = new Regex("[^0-9.,]+");
             e.Handled = regex.IsMatch(e.Text);
         }
         private void NumberValidationTextBox3(object sender, TextCompositionEventArgs e)
@@ -290,8 +295,16 @@ namespace _22_03_2023_WPF_kable_lisp_circle
 
         private void replacement_Click(object sender, RoutedEventArgs e)
         {
-            List<string> list = new List<string>();
-            list.Add(textbox2.Text);
+            List<string> replacement = new List<string>();
+            string[] stringSeparators = new string[] { "\r\n" };
+            string text = textbox2.Text;
+            string[] lines = text.Split(stringSeparators, StringSplitOptions.None);
+            // используем регулярные выражения
+            string pattern = ",";
+            string replace = ".";
+            string result =Regex.Replace(text, pattern, replace);
+            textbox2.Text = result;
+            
         }
     }
 }

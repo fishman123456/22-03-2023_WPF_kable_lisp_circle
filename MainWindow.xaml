@@ -11,7 +11,7 @@
         <AlternationConverter x:Key="AlternationConverter"/>
     </Window.Resources>
     <Border CornerRadius="50,0,50,0" Background="White" BorderBrush="#99ffc0c0" BorderThickness="5">
-        <Grid>
+        <Grid x:Name="MyGrid">
             <Grid.RowDefinitions>
                 <RowDefinition Height="50*"/>
                 <RowDefinition Height="50*"/>
@@ -35,9 +35,11 @@
 
             </Grid.ColumnDefinitions>
             <!-- для ввода данных-->
-
-            <Image Stretch="Fill" Source="C:\Users\Fishman_1\Documents\GitHub\22-03-2023_WPF_kable_lisp_circle\water.jpg" 
+           
+            <Image Name="myImage" Stretch="Fill" 
                Grid.ColumnSpan="8" Grid.RowSpan="8" />
+            
+            <!-- <Image.Source="/{water.jpg}"-->
             <!-- для ввода данных-->
 
 
