@@ -230,6 +230,7 @@ namespace _22_03_2023_WPF_kable_lisp_circle
         {
 
         }
+        #region
         public static void CheckDate()
         {
             DateTime dt1 = DateTime.Now;
@@ -244,7 +245,7 @@ namespace _22_03_2023_WPF_kable_lisp_circle
                 //w1.Close();
             }
         }
-
+        #endregion
         private void clear_name_Click(object sender, RoutedEventArgs e)
         {
             textbox1?.Clear();
